@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Stock Hawk</string>
+    <string name="app_name" translatable="false">Stock Hawk</string>
 
     <string name="pref_stocks_initialized_key" translatable="false">initialized</string>
 
-    <string name="pref_stocks_key">stocks</string>
+    <string name="pref_stocks_key" translatable="false">stocks</string>
 
 
     <string name="pref_display_mode_key">displayMode</string>
@@ -16,7 +16,6 @@
     <string name="default_stocks_apple">AAPL</string>
     <string name="default_stocks_microsoft">MSFT</string>
     <string name="default_stocks_facebook">FB</string>
-
 
     <string name="action_change_units">@string/pref_display_mode_key</string>
 
@@ -31,5 +30,9 @@
 
     <string name="toast_stock_added_no_connectivity">Symbol %s added. Will refresh when network available.</string>
     <string name="toast_no_connectivity">Will refresh when network available.</string>
+
+    <string name="quotes_list">List with the saved quotes.</string>
+    <string name="add_quote">Button for add new quote.</string>
+    <string name="btn_change_units">Button for change the units.</string>
 
 </resources>

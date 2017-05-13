@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.udacity.stockhawk.R;
 import com.udacity.stockhawk.data.Contract;
 import com.udacity.stockhawk.data.PrefUtils;
+import com.udacity.stockhawk.model.StockDto;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -104,7 +105,7 @@ class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHolder> {
 
 
     interface StockAdapterOnClickHandler {
-        void onClick(String symbol);
+        void onClick(StockDto stock);
     }
 
     class StockViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -129,8 +130,18 @@ class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHolder> {
             int adapterPosition = getAdapterPosition();
             cursor.moveToPosition(adapterPosition);
             int symbolColumn = cursor.getColumnIndex(Contract.Quote.COLUMN_SYMBOL);
-            clickHandler.onClick(cursor.getString(symbolColumn));
+            int priceColumn = cursor.getColumnIndex(Contract.Quote.COLUMN_PRICE);
+            int absoluteChangeColumn = cursor.getColumnIndex(Contract.Quote.COLUMN_ABSOLUTE_CHANGE);
+            int percentageChangeColumn = cursor.getColumnIndex(Contract.Quote.COLUMN_PERCENTAGE_CHANGE);
+            int historyColumn = cursor.getColumnIndex(Contract.Quote.COLUMN_HISTORY);
 
+            String symbol = cursor.getString(symbolColumn);
+            String price = cursor.getString(priceColumn);
+            String absoluteChange = cursor.getString(absoluteChangeColumn);
+            String percentChange = cursor.getString(percentageChangeColumn);
+            String history = cursor.getString(historyColumn);
+            StockDto stock = new StockDto(symbol,price,absoluteChange,percentChange,history);
+            clickHandler.onClick(stock);
         }
 
 

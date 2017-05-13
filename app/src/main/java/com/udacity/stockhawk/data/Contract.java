@@ -39,7 +39,7 @@ public final class Contract {
                 COLUMN_PERCENTAGE_CHANGE,
                 COLUMN_HISTORY
         );
-        static final String TABLE_NAME = "quotes";
+        public static final String TABLE_NAME = "quotes";
 
         public static Uri makeUriForStock(String symbol) {
             return URI.buildUpon().appendPath(symbol).build();
@@ -49,7 +49,65 @@ public final class Contract {
             return queryUri.getLastPathSegment();
         }
 
+        public static Uri getURI() {
+            return URI;
+        }
 
+        public static String getId() {
+            return _ID;
+        }
+
+        public static String getColumnSymbol() {
+            return COLUMN_SYMBOL;
+        }
+
+        public static String getColumnPrice() {
+            return COLUMN_PRICE;
+        }
+
+        public static String getColumnAbsoluteChange() {
+            return COLUMN_ABSOLUTE_CHANGE;
+        }
+
+        public static String getColumnPercentageChange() {
+            return COLUMN_PERCENTAGE_CHANGE;
+        }
+
+        public static String getColumnHistory() {
+            return COLUMN_HISTORY;
+        }
+
+        public static int getPositionId() {
+            return POSITION_ID;
+        }
+
+        public static int getPositionSymbol() {
+            return POSITION_SYMBOL;
+        }
+
+        public static int getPositionPrice() {
+            return POSITION_PRICE;
+        }
+
+        public static int getPositionAbsoluteChange() {
+            return POSITION_ABSOLUTE_CHANGE;
+        }
+
+        public static int getPositionPercentageChange() {
+            return POSITION_PERCENTAGE_CHANGE;
+        }
+
+        public static int getPositionHistory() {
+            return POSITION_HISTORY;
+        }
+
+        public static ImmutableList<String> getQuoteColumns() {
+            return QUOTE_COLUMNS;
+        }
+
+        public static String getTableName() {
+            return TABLE_NAME;
+        }
     }
 
 }
